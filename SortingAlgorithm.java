@@ -31,13 +31,23 @@ public class SortingAlgorithm {
 	public static void bubbleSort(int[] arr) {
 		int len = arr.length;
 
-		while(len > 1) {
+		while (len > 1) {
 			for (int i = 0; i < len - 1; i++) {
 				if (arr[i] > arr[i + 1]) {
 					swap(arr, i, i + 1);
 				}
 			}
 			len--;
+		}
+	}
+
+	public static void insertionSort(int[] arr) {
+		for (int i = 0; i < arr.length ; i++) {
+			int j = i;
+			while (j > 0 && arr[j] < arr[j - 1] )  {
+				swap(arr, j - 1, j);
+				j = j-1;
+			}
 		}
 	}
 
