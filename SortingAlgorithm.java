@@ -28,6 +28,19 @@ public class SortingAlgorithm {
 		}
 	}
 
+	public static void bubbleSort(int[] arr) {
+		int len = arr.length;
+
+		while(len > 1) {
+			for (int i = 0; i < len - 1; i++) {
+				if (arr[i] > arr[i + 1]) {
+					swap(arr, i, i + 1);
+				}
+			}
+			len--;
+		}
+	}
+
 	public static int[] swap(int[] arr, int i, int j) {
 		int temp = arr[i];
 		arr[i] = arr[j];
