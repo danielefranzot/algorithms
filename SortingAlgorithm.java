@@ -107,7 +107,6 @@ public class SortingAlgorithm {
 	}
 
 	public static void quickSort(int[] arr) {
-		System.out.println(arr.length - 1);
 		quickSortWork(arr, 0, arr.length - 1);
 	}
 
@@ -127,7 +126,7 @@ public class SortingAlgorithm {
 		do{
 			do{
 				j = j -1;
-			}while(arr[j] > pivot);//search for an element that is less or equal than the pivot
+			}while(arr[j] > pivot);
 			do {
 				i++;
 			} while (arr[i] < pivot);
@@ -139,15 +138,10 @@ public class SortingAlgorithm {
 		return j;
 	}
 
-	private static int getPivot(int[] arr) {
-		return 1;
-	}
-
-	private static int[] swap(int[] arr, int i, int j) {
+	private static void swap(int[] arr, int i, int j) {
 		int temp = arr[i];
 		arr[i] = arr[j];
 		arr[j] = temp;
-		return arr;
 	}
 
 }
