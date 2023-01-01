@@ -106,6 +106,43 @@ public class SortingAlgorithm {
 		}
 	}
 
+	public static void quickSort(int[] arr) {
+		System.out.println(arr.length - 1);
+		quickSortWork(arr, 0, arr.length - 1);
+	}
+
+	private static void quickSortWork(int[] arr, int l, int r) {
+		if (l < r) {
+			int q = partition(arr, l, r);
+			quickSortWork(arr, l, q);
+			quickSortWork(arr, q + 1, r);
+		}
+	}
+
+	private static int partition(int[] arr, int l, int r) {
+		int pivot = arr[l];
+		int i = l - 1;
+		int j = r + 1;
+
+		do{
+			do{
+				j = j -1;
+			}while(arr[j] > pivot);//search for an element that is less or equal than the pivot
+			do {
+				i++;
+			} while (arr[i] < pivot);
+			if (i < j) {
+				swap(arr, i, j);
+			}
+		}while(i < j);
+
+		return j;
+	}
+
+	private static int getPivot(int[] arr) {
+		return 1;
+	}
+
 	private static int[] swap(int[] arr, int i, int j) {
 		int temp = arr[i];
 		arr[i] = arr[j];
